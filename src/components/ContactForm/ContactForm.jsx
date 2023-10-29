@@ -22,6 +22,7 @@ export class ContactForm extends Component {
     if (name && number) {
       this.props.onContactFormSubmit?.(name, number);
     }
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -51,6 +52,7 @@ export class ContactForm extends Component {
           pattern="\d{3}-\d{3}-\d{4}"
           onChange={this.handleInputChange}
           required
+          title="Please enter a phone number in the format: 555-555-5555"
         />
 
         <button className={css.button} type="submit">
